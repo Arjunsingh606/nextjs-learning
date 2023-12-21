@@ -1,28 +1,3 @@
-import { getServerSideProps } from "next/dist/build/templates/pages";
-
-const getData = (props) => {
-  console.log(props, "skjdfhjsdfjsdfgj");
-
-  return (
-    <>
-      <h2>user data</h2>
-      {props.users.map((item) => {
-        <li key={item.id}>{item.username}</li>;
-      })}
-    </>
-  );
-};
-
-export const getServerSideProps = async () => {
-  const data = await (await fetch("https://dummyjson.com/users")).json();
-  return {
-    props: {
-      data,
-    },
-  };
-};
-
-export default getData;
 
 // import React from 'react'
 // import Link from "next/link";
